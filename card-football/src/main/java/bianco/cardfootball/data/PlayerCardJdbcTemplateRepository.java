@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;
 
-public class PlayerCardJdbcTemplateRepository {
+public class PlayerCardJdbcTemplateRepository implements PlayerCardRepository {
     private static final String SELECT = """
             select pc.player_card_id, p.position_name, pc.`name`, pc.cost, pc.strength, pc.speed, pc.skill, pc.intelligence
             from player_card pc
@@ -24,29 +24,29 @@ public class PlayerCardJdbcTemplateRepository {
         return jdbcTemplate.query(sql, new PlayerCardMapper());
     }
 
-    public PlayerCard findById(int playerCardId) {
-        String sql = SELECT + "where player_card_id = ?;";
-
-        //TODO finish this query
-    }
-
-    public PlayerCard findByName(String name) {
-
-    }
-
-    public List<PlayerCard> findByPosition() {
-
-    }
-
-    public PlayerCard add(PlayerCard playerCard) {
-
-    }
-
-    public boolean update(PlayerCard playerCard) {
-
-    }
-
-    public boolean deleteById(int playerCardId) {
-
-    }
+//    public PlayerCard findById(int playerCardId) {
+//        String sql = SELECT + "where player_card_id = ?;";
+//
+//        //TODO finish this query
+//    }
+//
+//    public PlayerCard findByName(String name) {
+//
+//    }
+//
+//    public List<PlayerCard> findByPosition() {
+//
+//    }
+//
+//    public PlayerCard add(PlayerCard playerCard) {
+//
+//    }
+//
+//    public boolean update(PlayerCard playerCard) {
+//
+//    }
+//
+//    public boolean deleteById(int playerCardId) {
+//
+//    }
 }
