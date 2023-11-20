@@ -1,5 +1,6 @@
 package bianco.cardfootball.data;
 
+import bianco.cardfootball.data.mappers.PlayerCardMapper;
 import bianco.cardfootball.models.PlayerCard;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -7,8 +8,9 @@ import java.util.List;
 
 public class PlayerCardJdbcTemplateRepository {
     private static final String SELECT = """
-            select player_card_id, position, cost, `name`, strength, speed, skill, intelligence, card_text
-            from player_card
+            select pc.player_card_id, p.position_name, pc.`name`, pc.cost, pc.strength, pc.speed, pc.skill, pc.intelligence
+            from player_card pc
+            inner join `position` p on p.position_id = pc.position_id
             """;
 
     private final JdbcTemplate jdbcTemplate;
@@ -18,7 +20,8 @@ public class PlayerCardJdbcTemplateRepository {
     }
 
     public List<PlayerCard> findAll() {
-
+        String sql = SELECT + ";";
+        return jdbcTemplate.query(sql, new PlayerCardMapper());
     }
 
     public PlayerCard findById(int playerCardId) {

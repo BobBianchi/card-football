@@ -23,6 +23,8 @@ public class PlayerCard {
         this.cardText = cardText;
     }
 
+    public PlayerCard() {
+    }
 
     public Position getPosition() {
         return position;
