@@ -1,34 +1,28 @@
 package bianco.cardfootball.models;
 
 public class PlayerCard {
-    private int cardId;
+    private int playerCardId;
     private Position position;
     private int cost;
     private String name;
-    private int STG;
-    private int SPD;
-    private int SKL;
-    private int INT;
+    private int strength;
+    private int speed;
+    private int skill;
+    private int intelligence;
     private String cardText;
-    public PlayerCard(int cardId, Position position, int cost, String name, int STG, int SPD, int SKL, int INT, String cardText) {
-        this.cardId = cardId;
+
+    public PlayerCard(int playerCardId, Position position, int cost, String name, int strength, int speed, int skill, int intelligence, String cardText) {
+        this.playerCardId = playerCardId;
         this.position = position;
         this.cost = cost;
         this.name = name;
-        this.STG = STG;
-        this.SPD = SPD;
-        this.SKL = SKL;
-        this.INT = INT;
+        this.strength = strength;
+        this.speed = speed;
+        this.skill = skill;
+        this.intelligence = intelligence;
         this.cardText = cardText;
     }
 
-    public int getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(int cardId) {
-        this.cardId = cardId;
-    }
 
     public Position getPosition() {
         return position;
@@ -54,36 +48,44 @@ public class PlayerCard {
         this.name = name;
     }
 
-    public int getSTG() {
-        return STG;
+    public int getPlayerCardId() {
+        return playerCardId;
     }
 
-    public void setSTG(int STG) {
-        this.STG = STG;
+    public void setPlayerCardId(int playerCardId) {
+        this.playerCardId = playerCardId;
     }
 
-    public int getSPD() {
-        return SPD;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setSPD(int SPD) {
-        this.SPD = SPD;
+    public void setStrength(int strength) {
+        this.strength = strength;
     }
 
-    public int getSKL() {
-        return SKL;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setSKL(int SKL) {
-        this.SKL = SKL;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
-    public int getINT() {
-        return INT;
+    public int getSkill() {
+        return skill;
     }
 
-    public void setINT(int INT) {
-        this.INT = INT;
+    public void setSkill(int skill) {
+        this.skill = skill;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
     }
 
     public String getCardText() {
