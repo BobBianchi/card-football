@@ -1,4 +1,4 @@
-@url = http://localhost:8080/api/game
+@url = http://localhost:8080/api/player_card
 
 GET {{url}} HTTP/1.1
 

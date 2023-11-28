@@ -3,9 +3,11 @@ package bianco.cardfootball.data;
 import bianco.cardfootball.data.mappers.PlayerCardMapper;
 import bianco.cardfootball.models.PlayerCard;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class PlayerCardJdbcTemplateRepository implements PlayerCardRepository {
     private static final String SELECT = """
             select pc.player_card_id, p.position_name, pc.`name`, pc.cost, pc.strength, pc.speed, pc.skill, pc.intelligence
