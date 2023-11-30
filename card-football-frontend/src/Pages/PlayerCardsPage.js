@@ -1,6 +1,6 @@
 import PlayerCard from "../Component/PlayerCard";
 
-export default function CardsPage() {
+export default function PlayerCardsPage() {
     const CARDS = [
         {
             id: 1,
@@ -12,6 +12,7 @@ export default function CardsPage() {
             speed: 1,
             skill: 5,
             intelligence: 4,
+            cardText: "+1 if no pressure"
         },
         {
             id: 2,
@@ -23,6 +24,7 @@ export default function CardsPage() {
             speed: 1,
             skill: 3,
             intelligence: 4,
+            cardText: "No Mistakes: +1 if max yardage is less than 15"
         },
         {
             id: 3,
@@ -33,7 +35,8 @@ export default function CardsPage() {
             strength: 3,
             speed: 5,
             skill: 4,
-            intelligence: 3
+            intelligence: 3,
+            cardText: "Scramble: can run on pass plays"
         },
         {
             id: 4,
@@ -44,7 +47,8 @@ export default function CardsPage() {
             strength: 2,
             speed: 3,
             skill: 4,
-            intelligence: 3
+            intelligence: 3,
+            cardText: "Scramble: can run on pass plays"
         },
         {
             id: 5,
@@ -55,7 +59,9 @@ export default function CardsPage() {
             strength: 3,
             speed: 1,
             skill: 2,
-            intelligence: 2
+            intelligence: 2,
+            cardText: "Big Boy: if pressure wins by 1 incomplete pass"
+            // cardText: "QB sneaks are minimum 1 yard"
         },
         {
             id: 6,
@@ -66,13 +72,17 @@ export default function CardsPage() {
             strength: 2,
             speed: 4,
             skill: 5,
-            intelligence: 4
+            intelligence: 4,
+            cardText: "Geting away with it: ties favor this card "
         },
     ];
     return (
         <div className="row">
             {CARDS.map((card) => (
-                <div className="col player-card-col m-1">
+                <div 
+                className="col player-card-col m-1"
+                key={`player-card-${card.id}`}
+                >
                     <PlayerCard card={card} />
                 </div>
             ))}

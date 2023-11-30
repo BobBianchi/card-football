@@ -11,7 +11,7 @@ import {
     CardBody,
 } from "reactstrap";
 
-export default function PlayerCard({ card }) {
+export default function PlayCard({ card }) {
     return (
         <Card
             color="light"
@@ -24,47 +24,41 @@ export default function PlayerCard({ card }) {
         >
             <div className="container pt-2">
                 <div className="row">
-                    <div className="col-10">
+                    <div className="col-8">
                         <CardTitle tag="h5">{card.name}</CardTitle>
                     </div>
                     <div className="col">
                         <CardTitle style={{ color: "#b38f00" }} tag="h5">
-                            {card.cost}
+                            {card.yardageBaseMin}/{card.yardageBaseMax}
                         </CardTitle>
                     </div>
-                </div>
-                <div className="row">
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
-                        {card.position}
-                    </CardSubtitle>
+                    <div className="row">
+                        <CardSubtitle className="mb-2 text-muted" tag="h6">
+                            {card.type}
+                        </CardSubtitle>
+                    </div>
                 </div>
                 <div className="row">
                     <img alt={card.name} src={card.imgUrl} width="100%" />
                     <CardBody>
                         <div className="row">
                             <div
-                                style={{ color: "#b30000" }}
-                                className="col-6"
-                            >{`STG ${card.strength}`}</div>
+                                style={{ color: "#ff8c00" }}
+                                className="col-4"
+                            >{`TE ${card.tightEnds}`}</div>
                             <div
-                                style={{ color: "#006600" }}
-                                className="col-6"
-                            >{`SPD ${card.speed}`}</div>
+                                style={{ color: "#00b300" }}
+                                className="col-4"
+                            >{`RB ${card.runningBacks}`}</div>
+                            <div
+                                style={{ color: "#0000ff" }}
+                                className="col-4"
+                            >{`WR ${card.wideReceivers}`}</div>
                         </div>
                         <div className="row">
-                            <div
-                                style={{ color: "#6600cc" }}
-                                className="col-6"
-                            >{`SKL ${card.skill}`}</div>
-                            <div
-                                style={{ color: "#0000cc" }}
-                                className="col-6"
-                            >{`INT ${card.intelligence}`}</div>
-                        </div>
-                        <div className="row">
-                            <CardText>
-                                {card.cardText}
-                            </CardText>
+                            <div className="col">
+                                <CardText>{card.cardText}</CardText>
+                            </div>
                         </div>
                     </CardBody>
                 </div>
